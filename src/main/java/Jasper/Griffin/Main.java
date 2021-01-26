@@ -20,7 +20,7 @@ public class Main {
         jda.getPresence().setActivity(Activity.playing("!flagguesser"));
 
         // event listeners
-        //jda.addEventListener(new FlagGuesser());
+        jda.addEventListener(new FlagGuesser());
     }
 
 
