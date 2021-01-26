@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id'application'
+    id'com.github.johnrengelman.shadow' version '4.0.4'
+}
+
+mainClassName = 'Jasper.Griffin.Main'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'com.jagrosh:jda-utilities:3.0.2'
+    compile("net.dv8tion:JDA:4.2.0_168")
+    compile("ch.qos.logback:logback-classic:1.2.3")
+}
