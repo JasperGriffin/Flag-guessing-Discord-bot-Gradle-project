@@ -16,8 +16,9 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'com.jagrosh:jda-utilities:3.0.2'
     compile("net.dv8tion:JDA:4.2.0_168")
     compile("ch.qos.logback:logback-classic:1.2.3")
 }
+
+compileJava.options.encoding = 'UTF-8'
