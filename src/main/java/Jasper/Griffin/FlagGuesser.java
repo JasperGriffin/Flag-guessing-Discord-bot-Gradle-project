@@ -230,6 +230,11 @@ public class FlagGuesser extends ListenerAdapter {
             event.getChannel().sendMessage(embed.build()).queue();
         }
 
+        if (userMsg[0].equalsIgnoreCase(Main.prefix + "printforme")) {
+            int num = Integer.parseInt(userMsg[1]);
+            //printFlag(event, num);
+        }
+
     }
 
     // !generate
@@ -335,5 +340,23 @@ public class FlagGuesser extends ListenerAdapter {
         set.clear();
         counter = 0;
         gd.booleanData.put(serverId, false);
+    }
+
+    public void printFlag(GuildMessageReceivedEvent event, int num) {
+
+        String s = "";
+
+        if (num > COUNTRY_NUMBER) {
+            for (int i = 0; i < newCanvas.length; i++) {
+                //prints 7x9 flag
+                s += Data.getFlag2().get(num - COUNTRY_NUMBER_V2).get(i + 1);
+            }
+        } else {
+            for (int i = 0; i < canvas.length; i++) {
+                s += Data.getFlag().get(num).get(i + 1);
+            }
+        }
+
+        event.getChannel().sendMessage(s).queue();
     }
 }
